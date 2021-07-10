@@ -1,14 +1,18 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
-
+import { Text, View, StyleSheet, Image, Button } from "react-native";
+import img from "./assets/imagen.jpg";
 const App = () => {
   return (
     <View style={styles.vista}>
-      <Text style={styles.titulo}>Hello word 😶!</Text>
-      <Image
-        style={styles.imagen}
-        source="https://picsum.photos/id/237/200/300"
-      ></Image>
+      <Text style={styles.titulo}>Hello word !</Text>
+      <Image style={styles.imagen} source={img}></Image>
+      <Button
+        //onPress={onclick}
+        onPress={() => console.log("click")}
+        title="Learn More.."
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
     </View>
   );
 };
@@ -21,8 +25,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
-  titulo: { lineHeight: 100, color: "black", fontSize: 15 },
-  imagen: { width: 500, height: 500 },
+  titulo: { lineHeight: 100, color: "black", fontSize: 25 },
+  imagen: { width: 200, height: 200, borderRadius: 100 },
 });
 
 export default App;
