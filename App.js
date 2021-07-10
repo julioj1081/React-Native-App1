@@ -1,10 +1,14 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.vista}>
-      <Text style={styles.titulo}>Hello word !</Text>
+      <Text style={styles.titulo}>Hello word 😶!</Text>
+      <Image
+        style={styles.imagen}
+        source="https://picsum.photos/id/237/200/300"
+      ></Image>
     </View>
   );
 };
@@ -15,9 +19,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#000",
+    backgroundColor: "white",
   },
-  titulo: { lineHeight: 100, color: "white", fontSize: 15 },
+  titulo: { lineHeight: 100, color: "black", fontSize: 15 },
+  imagen: { width: 500, height: 500 },
 });
 
 export default App;
