@@ -16,3 +16,7 @@ cd my-project
 
 ******************
 Descargar la app de expo en android
+
+**********************
+se agrega ka extencion de image picker de Expo
+expo install expo-image-picker
