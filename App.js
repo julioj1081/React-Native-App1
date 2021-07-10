@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet } from "react-native";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.vista}>
+      <Text style={styles.titulo}>Hello word !</Text>
     </View>
   );
-}
+};
 
+//esto es como css
 const styles = StyleSheet.create({
-  container: {
+  vista: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#000",
   },
+  titulo: { lineHeight: 100, color: "white", fontSize: 15 },
 });
+
+export default App;

@@ -1,0 +1,18 @@
+********************
+actualizar cli 
+	npx react-native upgrade
+
+*********************
+instalar expo cli 
+	npm install --global expo-cli
+	expo init "my-project"
+
+cd my-project 
+	y ejecutar alguno
+
+-npm run android
+- npm run ios # requires an iOS device or macOS for access to an iOS simulator
+- npm run web
+
+******************
+Descargar la app de expo en android
