@@ -26,6 +26,10 @@ se agrega la extencion de (image picker de Expo)
 expo sharing 
 	expo install expo-sharing
 
+********************** para poder compartir imagenes en web
+anonymous-files.io
+	npm i anonymous-files
+
 -----------
 creditos 
 https://www.youtube.com/watch?v=hXDMWeD0ERM&ab_channel=Fazt
