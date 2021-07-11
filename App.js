@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Image, Button, Alert } from "react-native";
+import { Text, View, StyleSheet, Image, Button, Alert, TouchableOpacity } from "react-native";
+//expo sharing para poder compartir
+import * as Sharing from 'expo-sharing';
 import * as ImagePicker from "expo-image-picker";
 import img from "./assets/imagen.jpg";
+
 const App = () => {
+  //separator
+  const Separator = () => <View style={styles.separator} />;
+
   //para la imagen
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -41,23 +47,26 @@ const App = () => {
     <View style={styles.vista}>
       <Text style={styles.titulo}>Hello word !</Text>
       <Text style={styles.nombre}>Julio alberto</Text>
-      <Image
-        style={styles.imagen}
-        source={{
-          uri:
-            selectedImage !== null
-              ? selectedImage.localUri
-              : "https://picsum.photos/200/300",
-        }}
-      ></Image>
+      <TouchableOpacity onPress={openImagePickerAsync}>
+        <Image
+          style={styles.imagen}
+          source={{
+            uri:
+              selectedImage !== null
+                ? selectedImage.localUri
+                : "https://picsum.photos/200/300",
+          }}
+        ></Image>
+      </TouchableOpacity>
+      
 
       <View style={styles.vistaBoton}>
         <Button
-          onPress={openImagePickerAsync}
-          //onPress={() => Alert.alert("hello word")}
-          title="Selecciona una imagen"
+          onPress={() => Alert.alert("hello word")}
+          title="Compartir"
           style={styles.boton_learn}
         />
+        <Separator />
         <Button onPress={openCamarePickerAsync} title="Abrir camara" />
       </View>
     </View>
@@ -74,8 +83,8 @@ const styles = StyleSheet.create({
     height: 100,
   },
   vistaBoton: {
-    flexDirection: "row",
-    margin: 1,
+   flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   titulo: { lineHeight: 80, color: "black", fontSize: 25 },
   nombre: { color: "gray", marginBottom: 20 },
@@ -86,6 +95,11 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   boton_learn: { backgroundColor: "#000", color: "red" },
+  separator: {
+    marginHorizontal: 10,
+    borderBottomColor: 'white',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
 });
 
 export default App;
