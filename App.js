@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Image, Button, Alert, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Image, Button, Alert, TouchableOpacity, Platform } from "react-native";
 //expo sharing para poder compartir
 import * as Sharing from 'expo-sharing';
+/*nos permite compartir por web */
+import uploadToAnonymousFilesAsync from 'anonymous-files'; 
 import * as ImagePicker from "expo-image-picker";
 import img from "./assets/imagen.jpg";
 
@@ -25,8 +27,14 @@ const App = () => {
       return;
     }
 
+    if(Platform.OS === 'WEB'){ //compartir por web
+     let remoteUri = await uploadToAnonymousFilesAsync(almacen.uri);
+      setSelectedImage({ localUri: almacen.uri, remoteUri });
+    }else{
     //console.log(camara);
     setSelectedImage({ localUri: almacen.uri });
+    }
+
   };
 
   let openCamarePickerAsync = async () => {
@@ -40,7 +48,9 @@ const App = () => {
       return;
     }
     //console.log(camara.uri);
-    setSelectedImage({ localUri: camara.uri });
+    
+      setSelectedImage({ localUri: camara.uri });
+    
   };
 
   const DialogoOpen = async () => {
