@@ -18,7 +18,7 @@ cd my-project
 Descargar la app de expo en android
 
 ********************** para tener acceso a la camara
-se agrega ka extencion de image picker de Expo
+se agrega la extencion de (image picker de Expo)
 expo install expo-image-picker
 
 -----------
