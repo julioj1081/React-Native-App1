@@ -43,6 +43,14 @@ const App = () => {
     setSelectedImage({ localUri: camara.uri });
   };
 
+  const DialogoOpen = async () => {
+    if(!(await Sharing.isAvailableAsync())){
+      alert(`La imagen no esta disponible por ahora`);
+      return;
+    }
+    await Sharing.shareAsync(selectedImage.localUri);
+  }
+
   return (
     <View style={styles.vista}>
       <Text style={styles.titulo}>Hello word !</Text>
@@ -61,11 +69,17 @@ const App = () => {
       
 
       <View style={styles.vistaBoton}>
-        <Button
-          onPress={() => Alert.alert("hello word")}
-          title="Compartir"
-          style={styles.boton_learn}
-        />
+        {
+          selectedImage ? (
+            <Button
+            onPress={DialogoOpen}
+            title="Compartir"
+            style={styles.boton_learn}
+            /> ) : (
+              <View></View>
+            )
+        }
+        
         <Separator />
         <Button onPress={openCamarePickerAsync} title="Abrir camara" />
       </View>
@@ -82,10 +96,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 100,
   },
-  vistaBoton: {
-   flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   titulo: { lineHeight: 80, color: "black", fontSize: 25 },
   nombre: { color: "gray", marginBottom: 20 },
   imagen: {
@@ -95,6 +105,10 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   boton_learn: { backgroundColor: "#000", color: "red" },
+  vistaBoton: {
+   flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   separator: {
     marginHorizontal: 10,
     borderBottomColor: 'white',
