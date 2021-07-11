@@ -19,7 +19,12 @@ Descargar la app de expo en android
 
 ********************** para tener acceso a la camara
 se agrega la extencion de (image picker de Expo)
-expo install expo-image-picker
+	expo install expo-image-picker
+
+
+*********************** para poder compartir
+expo sharing 
+	expo install expo-sharing
 
 -----------
 creditos 
