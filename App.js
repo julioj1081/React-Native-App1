@@ -34,7 +34,6 @@ const App = () => {
     //console.log(camara);
     setSelectedImage({ localUri: almacen.uri });
     }
-
   };
 
   let openCamarePickerAsync = async () => {
