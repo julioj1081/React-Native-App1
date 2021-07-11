@@ -20,3 +20,12 @@ Descargar la app de expo en android
 ********************** para tener acceso a la camara
 se agrega ka extencion de image picker de Expo
 expo install expo-image-picker
+
+-----------
+creditos 
+https://www.youtube.com/watch?v=hXDMWeD0ERM&ab_channel=Fazt
+1:05:25
+
+------------
+entrar a la carpeta de AppNative
+ejecutar con npm start
